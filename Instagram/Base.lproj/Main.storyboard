@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,18 +60,19 @@
                     <connections>
                         <outlet property="passwordField" destination="1EQ-Tq-b53" id="suG-ix-86i"/>
                         <outlet property="usernameField" destination="jCe-u6-thv" id="iFI-WS-Gyf"/>
+                        <segue destination="lhu-QD-bgL" kind="presentation" identifier="loginSegue" id="NKL-bt-m0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="95.652173913043484" y="105.80357142857143"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home Feed-->
         <scene sceneID="2KG-qi-k58">
             <objects>
-                <tableViewController id="kuV-qu-J8Y" sceneMemberID="viewController">
+                <tableViewController id="kuV-qu-J8Y" customClass="HomeFeedTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="H4f-pY-mHR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -89,7 +90,13 @@
                             <outlet property="delegate" destination="kuV-qu-J8Y" id="aFi-sK-bD4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="qr1-ZV-Gp4"/>
+                    <navigationItem key="navigationItem" title="Home Feed" id="qr1-ZV-Gp4">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="vjT-9d-CSQ">
+                            <connections>
+                                <action selector="logoutButtonPress:" destination="kuV-qu-J8Y" id="t1v-7R-gUs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJe-JA-aQ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,7 +107,7 @@
             <objects>
                 <navigationController id="lhu-QD-bgL" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rVz-In-g6u">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
