@@ -34,7 +34,7 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    appDelegate.window.rootViewController = loginViewController;
+    //appDelegate.window.rootViewController = loginViewController;
     
     [[UIApplication sharedApplication].keyWindow setRootViewController: loginViewController];
     

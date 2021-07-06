@@ -7,6 +7,8 @@
 
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
+#import "LoginViewController.h"
+#import "HomeFeedTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +27,8 @@
         }];
 
         [Parse initializeWithConfiguration:config];
+    
+    
     //Test
     PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
      gameScore[@"score"] = @1337;
