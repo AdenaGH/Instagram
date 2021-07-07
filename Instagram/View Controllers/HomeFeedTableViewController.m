@@ -29,7 +29,7 @@
 - (IBAction)logoutButtonPress:(id)sender {
     NSLog(@"Logout action called");
 
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    //AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
 
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

@@ -96,6 +96,11 @@
                                 <action selector="logoutButtonPress:" destination="kuV-qu-J8Y" id="t1v-7R-gUs"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Compose Button" image="plus.app" catalog="system" id="8Lh-A0-MTx">
+                            <connections>
+                                <segue destination="BoE-z4-Eas" kind="show" id="ziq-Xo-rBa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJe-JA-aQ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -103,9 +108,77 @@
             <point key="canvasLocation" x="-146" y="793"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="pWx-q9-u5t">
+            <objects>
+                <navigationController id="BoE-z4-Eas" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3TA-at-WUZ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dKK-d6-xcI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Sbj-S5-PcO" kind="relationship" relationship="rootViewController" id="liW-px-IYQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bp0-fC-WVs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754" y="814"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="gA9-FY-jDH">
+            <objects>
+                <viewController id="Sbj-S5-PcO" customClass="ComposeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kCY-RH-yqd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Mio-oz-SRt">
+                                <rect key="frame" x="20" y="111" width="141" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a caption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xPQ-bE-jNN">
+                                <rect key="frame" x="169" y="111" width="164" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SO-QT-ojA">
+                                <rect key="frame" x="20" y="260" width="25" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="camera" catalog="system"/>
+                                <connections>
+                                    <action selector="getSelectedImage:" destination="Sbj-S5-PcO" eventType="touchUpInside" id="faG-7v-BqE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TT-cG-eiu" userLabel="Choose from Library">
+                                <rect key="frame" x="20" y="111" width="141" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" "/>
+                                <connections>
+                                    <action selector="getLibraryImage:" destination="Sbj-S5-PcO" eventType="touchUpInside" id="E7R-Is-cjb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SsY-5f-pYh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lyh-y7-E9m">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="Z7g-Cp-xF1"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="selectImage" destination="0SO-QT-ojA" id="rbC-HC-6WN"/>
+                        <outlet property="selectedImage" destination="Mio-oz-SRt" id="hWP-AR-qpL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0v4-1R-dT2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1637.68115942029" y="813.61607142857144"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="kBy-5L-CDm">
             <objects>
-                <navigationController id="lhu-QD-bgL" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navControl" id="lhu-QD-bgL" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rVz-In-g6u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -120,6 +193,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="image_placeholder" width="375" height="375"/>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
