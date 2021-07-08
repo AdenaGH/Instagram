@@ -7,6 +7,7 @@
 
 #import "ComposeViewController.h"
 #import "Photos/Photos.h"
+#import "Post.h"
 
 
 @interface ComposeViewController ()
@@ -26,6 +27,26 @@
     imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 
     [self presentViewController:imagePickerVC animated:YES completion:nil];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+- (IBAction)pressShare:(id)sender {
+    UIImage *resizeImage = [self resizeImage:self.selectedImage.image withSize:CGSizeMake(200, 200)];
+       [Post postUserImage: resizeImage withCaption:self.captionTextView.text withCompletion:nil];
+       [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)getSelectedImage:(id)sender {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];

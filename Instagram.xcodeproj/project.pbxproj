@@ -11,6 +11,7 @@
 		697946912E8E652CCBD5642F /* Pods_Instagram_InstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFAA280286159857A55CFF9 /* Pods_Instagram_InstagramUITests.framework */; };
 		7B5234D46E11BB6DC0E6211D /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25C00CF81C0CBFACA98EC53 /* Pods_Instagram.framework */; };
 		EC0D10D626961A990041FFF5 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0D10D526961A990041FFF5 /* ComposeViewController.m */; };
+		EC0D11232697A5550041FFF5 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0D11222697A5550041FFF5 /* Post.m */; };
 		EC8F4D932694F7A800CA512B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8F4D922694F7A800CA512B /* LoginViewController.m */; };
 		EC8F4D99269504D400CA512B /* HomeFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC8F4D98269504D400CA512B /* HomeFeedTableViewController.m */; };
 		ECB154772694E7BC00AC473F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB154762694E7BC00AC473F /* AppDelegate.m */; };
@@ -52,6 +53,8 @@
 		E25C00CF81C0CBFACA98EC53 /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC0D10D426961A990041FFF5 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		EC0D10D526961A990041FFF5 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		EC0D11212697A5550041FFF5 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		EC0D11222697A5550041FFF5 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		EC8F4D912694F7A800CA512B /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		EC8F4D922694F7A800CA512B /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		EC8F4D97269504D400CA512B /* HomeFeedTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedTableViewController.h; sourceTree = "<group>"; };
@@ -125,9 +128,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EC0D11202697A5400041FFF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC0D11212697A5550041FFF5 /* Post.h */,
+				EC0D11222697A5550041FFF5 /* Post.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EC8F4D902694F79000CA512B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EC0D11202697A5400041FFF5 /* Model */,
 				EC8F4D912694F7A800CA512B /* LoginViewController.h */,
 				EC8F4D922694F7A800CA512B /* LoginViewController.m */,
 				EC8F4D97269504D400CA512B /* HomeFeedTableViewController.h */,
@@ -438,6 +451,7 @@
 				EC0D10D626961A990041FFF5 /* ComposeViewController.m in Sources */,
 				ECB1547A2694E7BC00AC473F /* SceneDelegate.m in Sources */,
 				EC8F4D99269504D400CA512B /* HomeFeedTableViewController.m in Sources */,
+				EC0D11232697A5550041FFF5 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
