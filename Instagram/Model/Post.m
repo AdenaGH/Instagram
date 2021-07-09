@@ -6,12 +6,14 @@
 //
 
 #import "Post.h"
+//#import "DateTools/DateTools.h"
 @implementation Post
     
 @dynamic postID;
 @dynamic userID;
 @dynamic author;
 @dynamic caption;
+@dynamic posted;
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
@@ -28,6 +30,7 @@
     newPost.caption = caption;
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
+    newPost.posted = [NSDate date];
     
     [newPost saveInBackgroundWithBlock: completion];
 }

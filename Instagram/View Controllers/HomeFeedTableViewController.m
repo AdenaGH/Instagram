@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "PostCell.h"
 #import "Post.h"
+#import "DetailsViewController.h"
 
 @interface HomeFeedTableViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *feedView;
@@ -41,6 +42,7 @@
 }
 - (void)fetchPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query includeKey:@"author"];
     //[query whereKey:@"likesCount" greaterThan:@100];
     query.limit = 20;
 
@@ -129,14 +131,21 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqual:@"detailsSegue"]) {
+        PostCell *clickedCell = (PostCell *)sender;
+        Post *clickedPost = clickedCell.post;
+        DetailsViewController *detailsView = [segue destinationViewController];
+        detailsView.post = clickedPost;
+    }
 }
-*/
+
 
 @end
