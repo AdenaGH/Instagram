@@ -43,8 +43,9 @@
 - (void)fetchPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query includeKey:@"author"];
+    [query orderByDescending:@"createdAt"];
     //[query whereKey:@"likesCount" greaterThan:@100];
-    query.limit = 20;
+    //query.limit = 20;
 
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
@@ -140,10 +141,13 @@
     // Pass the selected object to the new view controller.
     
     if ([segue.identifier isEqual:@"detailsSegue"]) {
+        [self.tableView reloadData];
         PostCell *clickedCell = (PostCell *)sender;
         Post *clickedPost = clickedCell.post;
+        [self.tableView reloadData];
         DetailsViewController *detailsView = [segue destinationViewController];
         detailsView.post = clickedPost;
+        
     }
 }
 

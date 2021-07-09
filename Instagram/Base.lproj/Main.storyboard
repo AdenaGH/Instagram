@@ -93,20 +93,22 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbP-3u-zSz">
-                                            <rect key="frame" x="28" y="19" width="66" height="17"/>
+                                            <rect key="frame" x="28" y="19" width="366" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Since" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcG-h5-4us">
-                                            <rect key="frame" x="28" y="479.5" width="84" height="21"/>
+                                            <rect key="frame" x="28" y="479.5" width="366" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="WbP-3u-zSz" secondAttribute="trailing" id="4WS-zI-28Y"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="GcG-h5-4us" secondAttribute="bottom" constant="0.5" id="4ft-yd-1ZK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="GcG-h5-4us" secondAttribute="trailing" id="8pq-1D-Axe"/>
                                         <constraint firstItem="GcG-h5-4us" firstAttribute="top" secondItem="apY-m6-Dfr" secondAttribute="bottom" constant="15" id="8wb-wL-Ocb"/>
                                         <constraint firstItem="m5k-dc-Wxf" firstAttribute="leading" secondItem="bve-uV-cWo" secondAttribute="leading" id="Beg-l6-B1s"/>
                                         <constraint firstItem="m5k-dc-Wxf" firstAttribute="top" secondItem="WbP-3u-zSz" secondAttribute="bottom" constant="18" id="Pkr-9b-siO"/>
@@ -178,9 +180,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Mio-oz-SRt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Mio-oz-SRt">
                                 <rect key="frame" x="20" y="111" width="141" height="141"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="141" id="hFI-2n-uRT"/>
+                                    <constraint firstAttribute="height" constant="141" id="zAW-uR-qxb"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SO-QT-ojA">
                                 <rect key="frame" x="20" y="260" width="25" height="22"/>
@@ -191,19 +196,20 @@
                                     <action selector="getSelectedImage:" destination="Sbj-S5-PcO" eventType="touchUpInside" id="faG-7v-BqE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TT-cG-eiu" userLabel="Choose from Library">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TT-cG-eiu" userLabel="Choose from Library">
                                 <rect key="frame" x="20" y="111" width="141" height="141"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="141" id="jSS-Vq-GKh"/>
+                                    <constraint firstAttribute="height" constant="141" id="uqS-7M-00n"/>
+                                </constraints>
                                 <state key="normal" title=" "/>
                                 <connections>
                                     <action selector="getLibraryImage:" destination="Sbj-S5-PcO" eventType="touchUpInside" id="E7R-Is-cjb"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kpr-Ww-k0C">
-                                <rect key="frame" x="169" y="117" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type caption here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kpr-Ww-k0C">
+                                <rect key="frame" x="166" y="117" width="243" height="135"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -211,6 +217,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SsY-5f-pYh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kpr-Ww-k0C" firstAttribute="bottom" secondItem="2TT-cG-eiu" secondAttribute="bottom" id="4H0-KC-6No"/>
+                            <constraint firstItem="2TT-cG-eiu" firstAttribute="leading" secondItem="SsY-5f-pYh" secondAttribute="leading" constant="20" id="6Vd-Cn-B1r"/>
+                            <constraint firstItem="Mio-oz-SRt" firstAttribute="top" secondItem="SsY-5f-pYh" secondAttribute="top" constant="23" id="BWX-Y0-Ljy"/>
+                            <constraint firstItem="Kpr-Ww-k0C" firstAttribute="top" secondItem="SsY-5f-pYh" secondAttribute="top" constant="29" id="Fq0-1u-MG3"/>
+                            <constraint firstItem="SsY-5f-pYh" firstAttribute="trailing" secondItem="Kpr-Ww-k0C" secondAttribute="trailing" constant="5" id="NjX-0Z-q7S"/>
+                            <constraint firstItem="Mio-oz-SRt" firstAttribute="leading" secondItem="SsY-5f-pYh" secondAttribute="leading" constant="20" id="TJH-xq-3As"/>
+                            <constraint firstItem="Kpr-Ww-k0C" firstAttribute="leading" secondItem="Mio-oz-SRt" secondAttribute="trailing" constant="5" id="bpK-5I-H5a"/>
+                            <constraint firstItem="2TT-cG-eiu" firstAttribute="top" secondItem="SsY-5f-pYh" secondAttribute="top" constant="23" id="gCL-BE-Jps"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Lyh-y7-E9m">
                         <barButtonItem key="rightBarButtonItem" title="Share" id="Z7g-Cp-xF1">

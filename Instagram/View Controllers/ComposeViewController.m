@@ -8,6 +8,7 @@
 #import "ComposeViewController.h"
 #import "Photos/Photos.h"
 #import "Post.h"
+#import "HomeFeedTableViewController.h"
 
 
 @interface ComposeViewController ()
