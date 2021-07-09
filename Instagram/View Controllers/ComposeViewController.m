@@ -44,7 +44,7 @@
 }
 
 - (IBAction)pressShare:(id)sender {
-    UIImage *resizeImage = [self resizeImage:self.selectedImage.image withSize:CGSizeMake(200, 200)];
+    UIImage *resizeImage = [self resizeImage:self.selectedImage.image withSize:CGSizeMake(400, 400)];
        [Post postUserImage: resizeImage withCaption:self.captionTextView.text withCompletion:nil];
        [self dismissViewControllerAnimated:YES completion:nil];
 }
